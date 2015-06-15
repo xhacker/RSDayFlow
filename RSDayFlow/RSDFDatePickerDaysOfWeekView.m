@@ -123,11 +123,14 @@
         self.shortStandaloneWeekdaySymbols = [dateFormatter shortStandaloneWeekdaySymbols];
         self.standaloneWeekdaySymbols = [dateFormatter standaloneWeekdaySymbols];
         
-        if (isPortraitInterfaceOrientation) {
-            weekdaySymbols = self.shortStandaloneWeekdaySymbols;
-        } else {
-            weekdaySymbols = self.standaloneWeekdaySymbols;
-        }
+        // since the view is in the master of split view, always use the short form
+        weekdaySymbols = self.shortStandaloneWeekdaySymbols;
+        
+//        if (isPortraitInterfaceOrientation) {
+//            weekdaySymbols = self.shortStandaloneWeekdaySymbols;
+//        } else {
+//            weekdaySymbols = self.standaloneWeekdaySymbols;
+//        }
     }
     
     NSArray *reorderedWeekdaySymbols = nil;
@@ -148,11 +151,14 @@
             self.shortStandaloneWeekdaySymbols = [self reorderedWeekdaySymbols:self.shortStandaloneWeekdaySymbols firstWeekdayIndex:firstWeekdayIndex];
             self.standaloneWeekdaySymbols = [self reorderedWeekdaySymbols:self.standaloneWeekdaySymbols firstWeekdayIndex:firstWeekdayIndex];
             
-            if (isPortraitInterfaceOrientation) {
-                reorderedWeekdaySymbols = self.shortStandaloneWeekdaySymbols;
-            } else {
-                reorderedWeekdaySymbols = self.standaloneWeekdaySymbols;
-            }
+            // since the view is in the master of split view, always use the short form
+            reorderedWeekdaySymbols = self.shortStandaloneWeekdaySymbols;
+            
+//            if (isPortraitInterfaceOrientation) {
+//                reorderedWeekdaySymbols = self.shortStandaloneWeekdaySymbols;
+//            } else {
+//                reorderedWeekdaySymbols = self.standaloneWeekdaySymbols;
+//            }
         }
     } else {
         reorderedWeekdaySymbols = weekdaySymbols;
@@ -223,11 +229,14 @@
                 weekdayLabel.text = self.shortStandaloneWeekdaySymbols[idx];
             }
         } else {
-            if (isPortraitInterfaceOrientation) {
-                weekdayLabel.text = self.shortStandaloneWeekdaySymbols[idx];
-            } else {
-                weekdayLabel.text = self.standaloneWeekdaySymbols[idx];
-            }
+            // since the view is in the master of split view, always use the short form
+            weekdayLabel.text = self.shortStandaloneWeekdaySymbols[idx];
+            
+//            if (isPortraitInterfaceOrientation) {
+//                weekdayLabel.text = self.shortStandaloneWeekdaySymbols[idx];
+//            } else {
+//                weekdayLabel.text = self.standaloneWeekdaySymbols[idx];
+//            }
         }
     }];
 }
